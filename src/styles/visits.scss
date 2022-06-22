@@ -1,0 +1,75 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.visits-page{
+  padding: 16px 0 100px;
+
+  &--detail{
+    padding: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+}
+
+.visits-detail{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__date{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+
+    .date-item{
+      flex-basis: 50%;
+      flex-grow: 1;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 145%;
+      color: #FFFFFF;
+      padding-right: 10px;
+
+      &__value{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+    }
+
+  }
+
+  &__desc{
+    font-size: 14px;
+    line-height: 145%;
+    color: #FFFFFF;
+  }
+
+  &__links{
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    margin-top: auto;
+
+    .btn{
+      margin: 8px 0;
+    }
+
+  }
+
+}
+
+@import "../blocks/modules/user-block/user-block.scss";
+@import "../blocks/modules/top-bar/top-bar.scss";
+@import "../blocks/modules/visits/visits.scss";
+@import "../blocks/modules/history/history.scss";

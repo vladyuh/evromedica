@@ -1,0 +1,22 @@
+mixin bottomBar(data)
+    .bottom-bar
+        .container
+            each item in data
+                if item.isActive
+                    if item.center
+                        a(href=item.link).bottom-bar__item.is-active.center
+                            .icon!=item.icon
+                            .caption!=item.text
+                    else
+                        a(href=item.link).bottom-bar__item.is-active
+                            .icon!=item.icon
+                            .caption!=item.text
+                else
+                    if item.center
+                        a(href=item.link).bottom-bar__item.center
+                            .icon!=item.icon
+                            .caption!=item.text
+                    else
+                        a(href=item.link).bottom-bar__item
+                            .icon!=item.icon
+                            .caption!=item.text

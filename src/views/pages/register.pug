@@ -1,0 +1,82 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+
+
+block variables
+    - const title = "Главная"
+
+block styles
+    link(rel="stylesheet" href="/styles/login.css")
+block content
+    .register-block
+        .container
+            .login-block__desc.register-block__desc
+                .title Здравствуйсте!
+                .text Вы входите в личный кабинет «Евромедики» впервые. Пожалуйста, заполните данные ниже
+            form.register-block__form
+                .form__field.photo
+                    label(for="photo").photo-placeholder: +icons('#icon_camera', 40)
+                    .photo-caption Добавить фото (необязательно)
+                    input(type="file" id="photo" name="photo")
+                .form__caption Личные данные
+                .form__field
+                    +input({
+                        type: "text",
+                        placeholder: "Найти врача или услугу",
+                        label: "Фамилия, без сокращений *",
+                        required: true,
+                        name: "lastname"
+                    })
+                .form__field
+                    +input({
+                        type: "text",
+                        placeholder: "Найти врача или услугу",
+                        label: "Имя, без сокращений *",
+                        required: true,
+                        name: "firstname"
+                    })
+                .form__field
+                    +input({
+                        type: "text",
+                        placeholder: "Найти врача или услугу",
+                        label: "Отчество, без сокращений *",
+                        required: true,
+                        name: "patronymic"
+                    })
+                .form__field
+                    +input({
+                        type: "date",
+                        placeholder: "дд.мм.гг",
+                        label: "Дата рождения",
+                        name: "date"
+                    })
+                .form__field
+                    +select({
+                        label: "Ваш пол",
+                        title: "Не выбран",
+                        data: ['Не выбран', 'Мужской', 'Женский'],
+                    })
+                .form__field
+                    +input({
+                        type: "tel",
+                        placeholder: "Найти врача или услугу",
+                        label: "Ваш номер телефона",
+                        required: true,
+                        name: "phone"
+                    })
+                .form__field
+                    .login-block__back.register-block__back
+                        a(href="login.html")
+                            +icons('#icon_chevron_left', 24)
+                            span Изменить телефон
+                .form__submit
+                    button.btn.btn-cyan(type=submit) Завершить регистрацию
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")

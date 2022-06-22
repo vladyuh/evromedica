@@ -1,0 +1,126 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.doctors-page {
+  padding: 16px 0 100px;
+
+  &--detail {
+    padding: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+}
+
+.doctors-detail {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__image {
+    border: 4px solid #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__spec {
+    .caption {
+      font-size: 14px;
+      line-height: 145%;
+      color: #FFFFFF;
+    }
+
+    .value {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+
+    margin-bottom: 24px;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 145%;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 14px;
+      line-height: 145%;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 9px;
+        left: 0;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #fff;
+      }
+    }
+
+  }
+
+
+  &__features {
+    margin-bottom: 24px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 145%;
+    color: #242629;
+
+    li {
+      padding: 4px 0;
+      padding-left: 28px;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        width: 20px;
+        height: 20px;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 6L8.125 13L5 9.81818' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
+    }
+
+  }
+
+
+}
+
+@import "../blocks/modules/user-block/user-block.scss";
+@import "../blocks/modules/top-bar/top-bar.scss";
+@import "../blocks/modules/favorites/favorites.scss";

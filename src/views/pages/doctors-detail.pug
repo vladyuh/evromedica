@@ -1,0 +1,44 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/favorites/favorites.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/doctors.css")
+block content
+    .doctors-page.doctors-page--detail
+        +top-bar("/doctors.html", "Голубенко Виталий Иванович")
+        .doctors-detail
+            .container
+                .doctors-detail__image
+                    img(src="/img/common/doc-big.jpg" width=328 height=328)
+                .doctors-detail__spec
+                    .caption Специализация
+                    .value Врач сосудистый хирург
+                .doctors-detail__text
+                    p Сферы врачебной деятельности:
+                    ul
+                        li Консультативный прием
+                        li Хирургическое лечение
+                    br
+                    p Врач постоянно повышающий свою квалификацию, регулярно посещает курсы, семинары. Активный участник конференций, проходящих как в Беларуси, так и за рубежом.
+                ul.doctors-detail__features
+                    li 1 квалификационная категория
+                    li Стаж работы 13 лет.
+                .doctors-detail__links
+                    a(href="#").btn.btn-cyan Записаться на прием
+    +callbackPopup()
+    +filters()
+block scripts
+    script(src="js/main.js")

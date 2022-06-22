@@ -1,0 +1,38 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+
+
+block variables
+    - const title = "Главная"
+
+block styles
+    link(rel="stylesheet" href="/styles/login.css")
+block content
+    .login-block
+        .container
+            .login-block__logo
+                img(src="/img/common/logo.svg" width=188 height=68)
+            form.login-block__form(action="code.html")
+                .form__field
+                    +input({
+                        type: "tel",
+                        placeholder: "Найти врача или услугу",
+                        label: "Ваш номер телефона",
+                        required: true,
+                        name: "phone"
+                    })
+                .form__submit
+                    button.btn.btn-cyan(type=submit) Получить код по СМС
+            .login-block__back
+                a(href="#")
+                    +icons('#icon_chevron_left', 24)
+                    span Назад на сайт
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")

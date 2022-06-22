@@ -1,0 +1,41 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/analyzes.css")
+block content
+    .analyzes-page.analyzes-page--detail
+        +top-bar("/analyzes.html", "Клинический анализ крови")
+        .analyzes-detail
+            .container
+                .analyzes-detail__date
+                    .date-item
+                        .date-item__caption Сделан
+                        .date-item__value 14.04.2022
+                    .date-item
+                        .date-item__caption Готов
+                        .date-item__value 18.04.2022
+                .analyzes-detail__desc Клинический анализ кроки – это наиболее доступный метод первичной оценки состояния организма, результаты которого, наряду с общим анализом мочи и биохимическим анализом крови, входят в алгоритмы диагностики большинства заболеваний.
+                .analyzes-detail__links
+                    a(href="#").btn.btn-transparent
+                        +icons('#icon-download', 24)
+                        span Скачать результат
+                    a(href="#").btn.btn-cyan Записаться повторно
+        //include ../../blocks/modules/app-bar/app-bar.pug
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")

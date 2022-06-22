@@ -1,0 +1,31 @@
+extends layouts/default
+include helpers/mixins
+include ../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../blocks/components/form/form.pug
+include ../blocks/components/checkbox/checkbox.pug
+include ../blocks/components/headers/headers.pug
+include ../blocks/components/table/table.pug
+include ../blocks/components/popup/popup.pug
+include ../blocks/modules/user-block/user-block.pug
+include ../blocks/modules/searchbox/searchbox.pug
+include ../blocks/modules/favorites/favorites.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/index.css")
+block content
+    .mainpage
+        +user('/img/common/user.jpg','Здравствуйте, <strong>Константин Алексеевич</strong>',true)
+        +searchbox()
+        include ../blocks/modules/ad-banner/ad-banner.pug
+        +favorites()
+        include ../blocks/modules/visits/visits.pug
+        include ../blocks/modules/services/services.pug
+        include ../blocks/modules/stocks/stocks.pug
+        include ../blocks/modules/analyzes/analyzes.pug
+        include ../blocks/modules/app-bar/app-bar.pug
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")

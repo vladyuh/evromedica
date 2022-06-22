@@ -1,0 +1,32 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/analyzes.css")
+block content
+    .analyzes-page.analyzes-page--detail
+        +top-bar("/analyzes.html", "Гематологические исследования")
+        .analyzes-detail
+            .container
+                .analyzes-detail__desc
+                    p Это исследования крови, как капиллярной, взятой из пальца, так и венозной.
+                    p Это комплекс исследований, в результате которого получают информацию о количественном и качественном составе клеточных элементов крови. Важнейшее исследование для диагностики-клинический анализ крови (общий анализ крови), включающий набор тестов по определению количества клеток крови, их вид, размеры, соотношение и функционирование.
+                .analyzes-detail__links
+                    a(href="#").btn.btn-cyan Записаться на анализ
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")

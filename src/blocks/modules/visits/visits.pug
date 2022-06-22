@@ -1,0 +1,18 @@
+.visits-block
+    .container
+        .block-title.visits-block__title
+            span План визитов
+            a(href="#").block-title__link
+                span Все
+                +icons('#icon_chevron_right', 24)
+        .visits-block__items
+            a(href="#").visits-block__item.with-dot
+                .image: img(loading="lazy" class="lazyload" data-src="/img/common/vis-1.jpg" width="48" height="64")
+                .text
+                    .text-title Ортопантомограмма
+                    .text-caption Запланировано на 20.04.22, 9:00
+            a(href="#").visits-block__item.with-dot
+                .image: img(loading="lazy" class="lazyload" data-src="/img/common/vis-2.jpg" width="48" height="64")
+                .text
+                    .text-title Ортопантомограмма
+                    .text-caption Запланировано на 20.04.22, 9:00

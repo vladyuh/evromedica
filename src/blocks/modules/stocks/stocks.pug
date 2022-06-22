@@ -1,0 +1,15 @@
+.stocks-block
+    .container
+        .block-title.stocks-block__title
+            span Акции
+            a(href="#").block-title__link
+                span Все
+                +icons('#icon_chevron_right', 24)
+        .stocks-block__items
+            a(href="#").stocks-block__item
+                .image: img(loading="lazy" class="lazyload" data-src="/img/common/st-1.jpg" width="64" height="64")
+                .text Вакцинация против COVID-19
+            a(href="#").stocks-block__item
+                .image: img(loading="lazy" class="lazyload" data-src="/img/common/st-2.jpg" width="64" height="64")
+                .text Проверить уровень витаминов со скидкой!
+

@@ -1,0 +1,87 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.services-page{
+  padding: 16px 0 100px;
+}
+
+.services-description{
+  margin-bottom: 32px;
+
+  &__highlight{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+  }
+
+  &__text{
+    font-size: 14px;
+    line-height: 145%;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+
+    .hidden{
+      display: none;
+      &.visible{
+        display: block;
+      }
+    }
+  }
+  &__readmore{
+    position: relative;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+
+    input{
+      display: none;
+
+      &:checked{
+        & ~ span.expand{
+          display: none;
+        }
+        & ~ span.collapse{
+          display: inline-block;
+        }
+      }
+
+    }
+
+    span{
+      &.expand{
+        display: inline-block;
+      }
+      &.collapse{
+        display: none;
+      }
+    }
+
+    &.is-active:after{
+      transform: scaleY(-1);
+    }
+
+
+    &::after{
+      vertical-align: middle;
+      transition: all 0.25s ease;
+      content: "";
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 11L12 15L8 11' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
+  }
+}
+
+
+@import "../blocks/modules/user-block/user-block.scss";
+@import "../blocks/modules/top-bar/top-bar.scss";
+@import "../blocks/modules/searchbox/searchbox.scss";
+@import "../blocks/modules/favorites/favorites.scss";
+@import "../blocks/modules/services-section/services-section.scss";

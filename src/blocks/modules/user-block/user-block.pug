@@ -1,0 +1,15 @@
+mixin user(src, name, notif)
+    if(notif)
+        .user-block
+            .container
+                a(href="/").user-block__image.with-notification
+                    img(src=src width=40 height=40)
+                .user-block__name!= name
+                a(href="tel:+375291800044").user-block__callback: +icons('#icon_phone', 18)
+    else
+        .user-block
+            .container
+                a(href="#").user-block__image
+                    img(src=src width=40 height=40)
+                .user-block__name!= name
+                a(href="tel:+375291800044").user-block__callback: +icons('#icon_phone', 18)

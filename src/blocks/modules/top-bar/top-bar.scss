@@ -1,0 +1,39 @@
+.top-bar{
+  margin-bottom: 24px;
+  padding: 8px 0;
+
+  .container{
+    display: flex;
+    position: relative;
+  }
+
+  &__back{
+    align-self: flex-start;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    left: 16px;
+  }
+
+  &__title{
+    width: 100%;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  &__close{
+    align-self: flex-start;
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    top: 0;
+    right: 16px;
+  }
+
+}

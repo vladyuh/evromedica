@@ -1,0 +1,29 @@
+mixin analyzes(title)
+    .analyzes-block
+        .container
+            .block-title.analyzes-block__title
+                span!=title
+            .analyzes-block__items
+                a(href="/analyzes-done.html").analyzes-block__item.with-dot
+                    .date 14 апреля
+                    .title Клинический анализ крови
+                    .ready-date Готов 18 апреля
+                a(href="#").analyzes-block__item.with-dot
+                    .date 13 апреля
+                    .title Определение уровня АЛТ в крови
+                    .ready-date Готов 17 апреля
+mixin analyzes-history(title)
+    .analyzes-block.analyzes-history
+        .container
+            .block-title.analyzes-block__title
+                span!=title
+            .analyzes-block__items
+                a(href="#").analyzes-block__item
+                    .date 22 марта
+                    .title Общеклинические исследования
+                a(href="#").analyzes-block__item
+                    .date 12 февраля
+                    .title Биохимические исследования
+                a(href="#").analyzes-block__item
+                    .date 29 декабря 2021
+                    .title Иммунологические исследования

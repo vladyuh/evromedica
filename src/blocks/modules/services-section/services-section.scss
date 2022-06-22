@@ -1,0 +1,86 @@
+.services-sections{
+
+  &__section{
+    margin-bottom: 24px;
+  }
+
+  &__item{
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding: 12px 36px 12px 16px;
+    margin-bottom: 8px;
+    position: relative;
+
+    &.has-submenu{
+      & > a::after{
+        display: none;
+      }
+    }
+
+    & > a{
+      font-size: 16px;
+      line-height: 150%;
+      color: #242629;
+      display: block;
+      position: relative;
+
+      &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: -24px;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L15 12L9 6' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
+
+    }
+
+    &.is-active{
+      .services-sections__submenu{
+        max-height: 100vh;
+        padding-top: 10px;
+        overflow-y: auto;
+      }
+      .services-sections__toggle{
+        transform: rotate(180deg);
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12L18 12' stroke='%23005F8F' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
+    }
+
+  }
+
+  &__toggle{
+    transition: all 0.25s ease;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 6V18' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6 12H18' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  }
+
+  &__submenu{
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    margin-right: -24px;
+  }
+
+  &__subitem{
+    margin-bottom: 0;
+    padding: 10px 0;
+    border-top: 1px solid #D8E1E6;
+
+    & > a::after{
+      right: 0;
+    }
+
+  }
+
+}

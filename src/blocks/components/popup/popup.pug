@@ -1,0 +1,79 @@
+mixin callbackPopup
+    .popup__wrp#callback
+        .popup.popup-callback
+            .popup-close
+                a(href="#close"): +icons('#ic_close', 24)
+            .popup-content
+                .popup-content__title Заказать звонок
+                form
+                    .form__field
+                        +input({
+                            type: 'text',
+                            placeholder: "Ваше имя",
+                            required: true,
+                        })
+                    .form__field
+                        +input({
+                            type: 'tel',
+                            placeholder: "Ваш телефон",
+                            required: true,
+                        })
+                    .form__field
+                        +input({
+                            type: 'hidden',
+                            value: "Заказать звонок",
+                        })
+                    .form__submit
+                        button.btn.btn-cyan(type="submit") Заказать
+mixin filters()
+    .popup__wrp#filters
+        .popup.popup-filters
+            .popup-close
+                a(href="#close"): +icons('#ic_close', 24)
+            .popup-content
+                .popup-content__title Фильтр
+                form.popup-filter-form
+                    .popup-filters__section
+                        .title Направления
+                        .popup-filters__directions
+                            label.checkbox
+                                input(type='checkbox' checked='' value="Все" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Все
+                            label.checkbox
+                                input(type='checkbox' value="Дерматология" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Дерматология
+                            label.checkbox
+                                input(type='checkbox' value="Оториноларингология" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Оториноларингология
+                            label.checkbox
+                                input(type='checkbox' value="Терапия" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Терапия
+                            label.checkbox
+                                input(type='checkbox' value="Травматология и ортопедия" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Травматология и ортопедия
+                            label.checkbox
+                                input(type='checkbox' value="Гинекология" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Гинекология
+                            label.checkbox
+                                input(type='checkbox' value="Урология" name="directions")
+                                span.checkbox__elem
+                                span.checkbox__text Урология
+                    .popup-filters__section
+                        .title Сортировать по
+                        .popup-filters__sort
+                            label.radio
+                                input(type='radio' checked='' value="Алфавиту" name="sort")
+                                span.radio__elem
+                                span.radio__text Алфавиту
+                            label.radio
+                                input(type='radio' checked='' value="Направлению работы" name="sort")
+                                span.radio__elem
+                                span.radio__text Направлению работы
+                    .popup-filters__submit
+                        button(type="submit").btn.btn-cyan Подобрать врача

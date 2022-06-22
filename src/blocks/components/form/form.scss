@@ -1,0 +1,290 @@
+$font-size: 16px;
+$line-height: 24px;
+$defaultPadding: 12px 16px;
+$paddingWithIcon: 12px 16px 12px 48px;
+$invalid: red;
+$inputHeight: 48px;
+$iconDimensions: 24px;
+
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+  outline: none;
+  resize: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-radius: 0;
+}
+
+input[type="submit"] {
+  border: none;
+  cursor: pointer;
+}
+
+input:not([type=checkbox]):not([type=radio]),
+textarea {
+  border: none;
+  transition: all 0.25s ease;
+  width: 100%;
+  outline: none;
+  padding: $defaultPadding;
+  font-size: $font-size;
+  line-height: $line-height;
+  color: #242629;
+  background-color: #fff;
+  border-radius: 8px;
+
+  &::placeholder {
+    color: #7F8185;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center right;
+  background-image: url("/img/svg/icon_calendar.svg");
+  width: 24px;
+  height: 24px;
+}
+
+input[type="date"]{
+  padding-right: 12px !important;
+}
+
+.input,
+.select,
+.textarea {
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.textarea {
+  &-icon__wrap {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 12px;
+      left: 16px;
+      display: flex;
+      align-items: center;
+      width: $iconDimensions;
+      height: $iconDimensions;
+    }
+
+    input:not([type=checkbox]):not([type=radio]),
+    textarea {
+      width: 100%;
+      padding: $paddingWithIcon !important;
+    }
+  }
+}
+
+.select{
+
+  &-hidden {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .af-select {
+    cursor: pointer;
+    display: inline-block;
+    font-size: $font-size;
+    line-height: $line-height;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #000;
+    width: 100%!important;
+    position: relative;
+  }
+
+  &-styled, select{
+    transition: all 0.25s ease;
+    width: 100%;
+    outline: none;
+    padding: $defaultPadding;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: #000;
+    background-color: #fff;
+    height: $inputHeight;
+    border-radius: 8px;
+  }
+
+  &-styled {
+    position: relative;
+
+    &-with-icon{
+      padding: $paddingWithIcon;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        top: 15px;
+        left: 10px;
+        display: flex;
+        align-items: center;
+        width: $iconDimensions;
+        height: $iconDimensions;
+
+        svg{
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+
+    span {
+      white-space: nowrap;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: #000;
+    }
+
+    &.active::after {
+      -webkit-transform: translateY(-50%) scaleY(-1);
+      -ms-transform: translateY(-50%) scaleY(-1);
+      transform: translateY(-50%) scaleY(-1)
+    }
+
+    &::after {
+      content: "";
+      width: 24px;
+      min-width: 24px;
+      height:24px;
+      background-image: url(../img/svg/ic_expand.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      -webkit-transition: -webkit-transform .3s;
+      transition: transform .3s;
+      -o-transition: transform .3s;
+      transition: transform .3s,-webkit-transform .3s;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+    }
+
+  }
+
+  &-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: auto;
+    left: 0;
+    z-index: 999;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    max-height: $inputHeight * 5;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    -webkit-box-shadow: 0 0 9px rgba(0,0,0,.25);
+    box-shadow: 0 0 9px rgba(0,0,0,.25);
+    color: #000;
+    width: 100%;
+    border-radius: 8px;
+
+    &.active{
+      display: block;
+    }
+
+    li {
+      margin: 0;
+      padding: $defaultPadding;
+      -webkit-transition: .15s ease-in;
+      -o-transition: .15s ease-in;
+      transition: .15s ease-in;
+      font-size: $font-size;
+      line-height: $line-height;
+      height: $inputHeight;
+      white-space: nowrap;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      color: #000;
+      text-align: left;
+    }
+
+    li:hover,
+    li.active {
+      background: #0088CC;
+      color: #fff
+    }
+
+    li[rel=hide] {
+      display: none
+    }
+
+  }
+}
+
+.form {
+  &__field {
+    margin-bottom: 16px;
+
+    & span.label {
+      font-size: 14px;
+      line-height: 145%;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+  }
+  &__submit{
+    padding-top: 8px;
+    .btn{
+      width: 100%;
+    }
+  }
+}
+
+.pincode{
+  display: flex;
+  justify-content: space-between;
+
+  input[type="number"] {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: #242629;
+    width: calc(100% / 4 - 10px);
+    height: 70px;
+    border-radius: 8px;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    appearance: textfield;
+    border: 2px solid transparent;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    display: none;
+  }
+
+  input[type="number"]:focus {
+    border: 2px solid #005F8F;
+  }
+}

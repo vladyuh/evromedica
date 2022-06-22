@@ -1,0 +1,43 @@
+@import "header/header";
+@import "footer/footer";
+@import "app-bar/app-bar.scss";
+
+.block-title{
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  font-family: "Raleway", sans-serif;
+
+  &__link{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    font-family: "Open Sans", sans-serif;
+  }
+
+}
+
+.block-subtitle{
+  font-size: 14px;
+  line-height: 145%;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  margin-top: -8px;
+}
+
+.page-title{
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 132%;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  font-family: "Raleway", sans-serif;
+}

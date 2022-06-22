@@ -1,0 +1,114 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.analyzes-page{
+  padding: 16px 0 100px;
+
+  &--detail{
+    padding: 16px 0 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+}
+
+.analyzes-detail{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  &__date{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 24px;
+
+
+    .date-item{
+      flex-basis: 50%;
+      flex-grow: 1;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 145%;
+      color: #FFFFFF;
+      padding-right: 10px;
+
+      &__value{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+      }
+
+    }
+
+  }
+
+  &__desc{
+    font-size: 14px;
+    line-height: 145%;
+    color: #FFFFFF;
+  }
+
+  &__links{
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+    margin-top: auto;
+
+    .btn{
+      margin: 8px 0;
+    }
+
+  }
+
+}
+
+.analyzes-links{
+
+  .container{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__link{
+    width: 100%;
+    margin-bottom: 8px;
+    padding: 12px;
+    padding-right: 36px;
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #242629;
+    position: relative;
+
+    &::after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 12px;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L15 12L9 6' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
+
+    &:last-child{
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+@import "../blocks/modules/user-block/user-block.scss";
+@import "../blocks/modules/top-bar/top-bar.scss";
+@import "../blocks/modules/analyzes/analyzes.scss";

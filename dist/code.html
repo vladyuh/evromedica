@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Главная</title>
+    <link rel="manifest" href="manifest.min.json">
+    <meta name="theme-color" content="#0088CC">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <link rel="stylesheet" href="/styles/login.css">
+  <body class="perf-no-animation page">
+    <header></header>
+    <div class="mobileMenu">
+      <div class="container">
+        <div class="mobileMenu-header">
+          <div class="mobileMenu-header__toggle">
+                <div class="burger open"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="mobileMenu-nav">
+          <ul class="mobileMenu-nav__ul">
+            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#inputs">Inputs</a></li>
+            <li><a href="#selects">Selects</a></li>
+            <li><a href="#forms">Form</a></li>
+            <li><a href="#checkbox">Checkboxes</a></li>
+            <li><a href="#edittext">Text</a></li>
+          </ul>
+        </div>
+        <div class="mobileMenu-footer"></div>
+      </div>
+    </div>
+    <main>
+      <div class="login-block">
+        <div class="container">
+          <div class="login-block__logo"><img src="/img/common/logo.svg" width="188" height="68"></div>
+          <div class="login-block__desc">
+            <div class="title">Код доступа</div>
+            <div class="text">На номер<span class="number">+375 (29) 444-**-**</span>было отправлено СМС с кодом доступа</div>
+          </div>
+          <form class="login-block__form" action="register.html">
+            <div class="form__field pincode">
+              <input type="number">
+              <input type="number">
+              <input type="number">
+              <input type="number">
+              <input type="hidden" name="pincode">
+            </div>
+            <div class="form__submit">
+              <button class="btn btn-transparent">Получить код по СМС</button>
+            </div>
+          </form>
+          <div class="login-block__back"><a href="login.html">
+              <svg width="24" height="24">
+                <use xlink:href="/img/sprites/sprite.svg#icon_chevron_left"></use>
+              </svg><span>Изменить телефон</span></a></div>
+        </div>
+      </div>
+      <div class="popup__wrp" id="callback">
+        <div class="popup popup-callback">
+          <div class="popup-close"><a href="#close">
+              <svg width="24" height="24">
+                <use xlink:href="/img/sprites/sprite.svg#ic_close"></use>
+              </svg></a></div>
+          <div class="popup-content">
+            <div class="popup-content__title">Заказать звонок</div>
+            <form>
+              <div class="form__field">
+                <div class="input input-text">
+                  <input type="text" placeholder="Ваше имя" required="required"/>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="input input-tel">
+                  <input type="tel" placeholder="Ваш телефон" required="required"/>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="input input-hidden">
+                  <input type="hidden"/>
+                </div>
+              </div>
+              <div class="form__submit">
+                <button class="btn btn-cyan" type="submit">Заказать</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <div class="scroll-top">
+      <svg width="24" height="24">
+        <use xlink:href="/img/sprites/sprite.svg#ic_up"></use>
+      </svg>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

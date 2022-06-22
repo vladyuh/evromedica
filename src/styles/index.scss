@@ -1,0 +1,19 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+@import "vendor/splide-core.scss";
+
+.mainpage{
+  padding: 16px 0 100px;
+}
+
+
+@import "../blocks/modules/user-block/user-block.scss";
+@import "../blocks/modules/searchbox/searchbox.scss";
+@import "../blocks/modules/ad-banner/ad-banner.scss";
+@import "../blocks/modules/favorites/favorites.scss";
+@import "../blocks/modules/visits/visits.scss";
+@import "../blocks/modules/services/services.scss";
+@import "../blocks/modules/stocks/stocks.scss";
+@import "../blocks/modules/analyzes/analyzes.scss";

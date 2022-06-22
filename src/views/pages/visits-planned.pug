@@ -1,0 +1,35 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/visits.css")
+block content
+    .visits-page.visits-page--detail
+        +top-bar("/visits.html", "Ортопантомограмма")
+        .visits-detail
+            .container
+                .visits-detail__date
+                    .date-item
+                        .date-item__caption Запланирован на
+                        .date-item__value 20.04.2022
+                .visits-detail__desc Клинический анализ кроки – это наиболее доступный метод первичной оценки состояния организма, результаты которого, наряду с общим анализом мочи и биохимическим анализом крови, входят в алгоритмы диагностики большинства заболеваний.
+                .visits-detail__links
+                    a(href="#").btn.btn-transparent Отменить визит
+        //include ../../blocks/modules/app-bar/app-bar.pug
+    +callbackPopup()
+block scripts
+    script(src="js/main.js")

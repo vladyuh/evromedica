@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Главная</title>
+    <link rel="manifest" href="manifest.min.json">
+    <meta name="theme-color" content="#0088CC">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="img/favicons/apple-touch-icon-precomposed.png">
+    <link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/favicons/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicons/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <link rel="stylesheet" href="/styles/analyzes.css">
+  <body class="perf-no-animation page">
+    <header></header>
+    <div class="mobileMenu">
+      <div class="container">
+        <div class="mobileMenu-header">
+          <div class="mobileMenu-header__toggle">
+                <div class="burger open"><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="mobileMenu-nav">
+          <ul class="mobileMenu-nav__ul">
+            <li><a href="#breadcrumbs">Breadcrumbs</a></li>
+            <li><a href="#buttons">Buttons</a></li>
+            <li><a href="#inputs">Inputs</a></li>
+            <li><a href="#selects">Selects</a></li>
+            <li><a href="#forms">Form</a></li>
+            <li><a href="#checkbox">Checkboxes</a></li>
+            <li><a href="#edittext">Text</a></li>
+          </ul>
+        </div>
+        <div class="mobileMenu-footer"></div>
+      </div>
+    </div>
+    <main>
+      <div class="analyzes-page">
+        <div class="user-block">
+          <div class="container"><a class="user-block__image with-notification" href="/"><img src="/img/common/user.jpg" width="40" height="40"/></a>
+            <div class="user-block__name">Здравствуйте, <strong>Константин Алексеевич</strong></div><a class="user-block__callback" href="tel:+375291800044">
+              <svg width="18" height="18">
+                <use xlink:href="/img/sprites/sprite.svg#icon_phone"></use>
+              </svg></a>
+          </div>
+        </div>
+        <div class="page-title">
+          <div class="container">
+            <div class="page-title__text">Анализы</div>
+          </div>
+        </div>
+        <div class="tab-block">
+          <div class="container">
+            <div class="tab-block__toggles">
+              <div class="tab-block__toggle is-active" data-tab="1">Ваши анализы</div>
+              <div class="tab-block__toggle" data-tab="2">Запись на анализ</div>
+            </div>
+            <div class="tab-block__contents">
+              <div class="tab-block__content is-active" data-tab="1">
+                <div class="analyzes-block">
+                  <div class="container">
+                    <div class="block-title analyzes-block__title"><span>Новые результаты анализов</span></div>
+                    <div class="analyzes-block__items"><a class="analyzes-block__item with-dot" href="/analyzes-done.html">
+                        <div class="date">14 апреля</div>
+                        <div class="title">Клинический анализ крови</div>
+                        <div class="ready-date">Готов 18 апреля</div></a><a class="analyzes-block__item with-dot" href="#">
+                        <div class="date">13 апреля</div>
+                        <div class="title">Определение уровня АЛТ в крови</div>
+                        <div class="ready-date">Готов 17 апреля</div></a></div>
+                  </div>
+                </div>
+                <div class="analyzes-block analyzes-history">
+                  <div class="container">
+                    <div class="block-title analyzes-block__title"><span>История анализов</span></div>
+                    <div class="analyzes-block__items"><a class="analyzes-block__item" href="#">
+                        <div class="date">22 марта</div>
+                        <div class="title">Общеклинические исследования</div></a><a class="analyzes-block__item" href="#">
+                        <div class="date">12 февраля</div>
+                        <div class="title">Биохимические исследования</div></a><a class="analyzes-block__item" href="#">
+                        <div class="date">29 декабря 2021</div>
+                        <div class="title">Иммунологические исследования</div></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-block__content" data-tab="2">
+                <div class="analyzes-links">
+                  <div class="container"><a class="analyzes-links__link" href="#">Общеклинические исследования</a><a class="analyzes-links__link" href="/analyzes-appointment.html#choose">Гематологические исследования</a><a class="analyzes-links__link" href="#">Биохимические исследования</a><a class="analyzes-links__link" href="#">Гистологические и цитологические исследования</a><a class="analyzes-links__link" href="#">Иммунологические исследования</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-bar">
+          <div class="container"><a class="bottom-bar__item" href="services.html">
+              <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 12H17M3 6H21M3 18H21" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></div>
+              <div class="caption">Услуги</div></a><a class="bottom-bar__item is-active" href="analyzes.html">
+              <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M14 2V8H20" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 13H8" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 17H8" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 9H9H8" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></div>
+              <div class="caption">Анализы</div></a><a class="bottom-bar__item center" href="appointment.html#choose">
+              <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 5V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 12H19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></div>
+              <div class="caption">Запись</div></a><a class="bottom-bar__item" href="visits.html">
+              <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M12 6V12L16 14" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></div>
+              <div class="caption">Визиты</div></a><a class="bottom-bar__item" href="doctors.html">
+              <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M23 20.9999V18.9999C22.9993 18.1136 22.7044 17.2527 22.1614 16.5522C21.6184 15.8517 20.8581 15.3515 20 15.1299" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 3.12988C16.8604 3.35018 17.623 3.85058 18.1676 4.55219C18.7122 5.2538 19.0078 6.11671 19.0078 7.00488C19.0078 7.89305 18.7122 8.75596 18.1676 9.45757C17.623 10.1592 16.8604 10.6596 16 10.8799" stroke="#242629" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg></div>
+              <div class="caption">Врачи</div></a>
+          </div>
+        </div>
+      </div>
+      <div class="popup__wrp" id="callback">
+        <div class="popup popup-callback">
+          <div class="popup-close"><a href="#close">
+              <svg width="24" height="24">
+                <use xlink:href="/img/sprites/sprite.svg#ic_close"></use>
+              </svg></a></div>
+          <div class="popup-content">
+            <div class="popup-content__title">Заказать звонок</div>
+            <form>
+              <div class="form__field">
+                <div class="input input-text">
+                  <input type="text" placeholder="Ваше имя" required="required"/>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="input input-tel">
+                  <input type="tel" placeholder="Ваш телефон" required="required"/>
+                </div>
+              </div>
+              <div class="form__field">
+                <div class="input input-hidden">
+                  <input type="hidden"/>
+                </div>
+              </div>
+              <div class="form__submit">
+                <button class="btn btn-cyan" type="submit">Заказать</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+    <div class="scroll-top">
+      <svg width="24" height="24">
+        <use xlink:href="/img/sprites/sprite.svg#ic_up"></use>
+      </svg>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>

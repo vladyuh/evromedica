@@ -1,0 +1,155 @@
+@import "helpers/variables";
+@import "helpers/mixins";
+@import "helpers/functions";
+
+.login-block{
+  display: flex;
+  flex-grow: 1;
+  padding: 48px 0 24px;
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    transition: all 0.25s ease;
+  }
+
+  &__logo{
+    max-width: 188px;
+    margin: 0 auto 52px;
+  }
+
+  &__desc{
+    margin-bottom: 24px;
+    .title{
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 132%;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .text{
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+  }
+
+  &__back{
+    padding-top: 24px;
+    margin-top: auto;
+    text-align: center;
+    a{
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      color: #FFFFFF;
+    }
+  }
+
+  @media screen and (min-width: 640px) {
+    .container{
+      justify-content: center;
+    }
+
+    &__back{
+      margin-top: 0;
+      padding-top: 52px;
+    }
+  }
+
+}
+
+.register-block{
+  padding: 56px 0;
+
+  .form__field{
+    &.photo{
+      position: relative;
+      padding: 12px 0 16px;
+      input{
+        display: none;
+      }
+    }
+    .photo-placeholder{
+      cursor: pointer;
+      background-color: #FFFFFF;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      border-radius: 60px;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+
+      svg{
+        position: relative;
+        z-index: 1;
+        opacity: 1;
+        transition: all 0.25s ease;
+      }
+
+      &.uploaded{
+        svg{
+          opacity: 0;
+          width: 32px;
+          height: 32px;
+        }
+        &:hover{
+          svg{
+            opacity: 1;
+          }
+        }
+        &:hover::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 54px;
+          height: 54px;
+          margin: auto;
+          background-color: #FFFFFF;
+          border-radius: 50%;
+        }
+      }
+
+
+    }
+    .photo-caption{
+      padding-top: 12px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 145%;
+      text-align: center;
+      color: #FFFFFF;
+    }
+  }
+
+  .form__caption{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+  }
+
+  &__back{
+    padding: 0;
+    margin: 0;
+    padding-top: 8px;
+    padding-bottom: 12px;
+  }
+
+}

@@ -1,0 +1,62 @@
+$radius: 80px;
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 25px;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+
+  svg{
+    margin-right: 8px;
+  }
+
+  &-cyan{
+    background: #0088CC;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    transition: all 0.25s ease;
+
+    &:focus,
+    &:active{
+      background: #005F8F;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    &:hover{
+      background: #009CEB;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+    }
+
+  }
+
+  &-transparent{
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+
+    &:focus,
+    &:active{
+      background: rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+    }
+
+    &:hover{
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+    }
+
+  }
+
+}
