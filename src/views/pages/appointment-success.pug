@@ -1,0 +1,43 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/appoint.css")
+block content
+    .appoint-page.appoint-page--success
+        .top-bar
+            .container
+                .top-bar__title Вы успешно<br> записаны на:
+                .top-bar__close
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_x_small_border')
+        .appointment-block
+            .container
+                .appointment-block__success
+                    .name.
+                        Гинекология<br>
+                        Кардиотокограмма плода,<br>
+                        врач Басенко Татьяна Валерьевна<br>
+                        26.05.22, 18:50
+                    .caption С вами свяжется наш специалист для подтверждения записи!
+                    a(href="/").btn.btn-cyan Вернуться на главный экран
+
+    +callbackPopup()
+block scripts
+    script(src="js/data.js")
+    script(src="js/main.js")
+    //script(src="js/appoint.js")

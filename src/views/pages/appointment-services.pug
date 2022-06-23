@@ -1,0 +1,56 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/appoint.css")
+block content
+    .appoint-page
+        .top-bar
+            .container
+                a(href="#choose").top-bar__back
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_chevron_left_small_border')
+                .top-bar__title Услуга
+                a(href="#choose").top-bar__close
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_x_small_border')
+        .appointment-block
+            .container
+                .appointment-block__services
+                    .appointment-block__service
+                        label Кардиотокограмма плода
+                            input(type="radio" name="service")
+                    .appointment-block__service
+                        label Первичный прием врача-акушера-гинеколога (детский)
+                            input(type="radio" name="service")
+                    .appointment-block__service
+                        label Первичный прием врача-акушера-гинеколога с осмотром на гинекологическом кресле
+                            input(type="radio" name="service")
+                    .appointment-block__service
+                        label Первичный прием врача-акушера-гинеколога без осмотра на гинекологическом кресле
+                            input(type="radio" name="service")
+                    .appointment-block__service
+                        label Повторный прием врача-акушера-гинеколога с осмотром на гинекологическом кресле
+                            input(type="radio" name="service")
+                    .appointment-block__service
+                        label Повторный прием врача-акушера-гинеколога без осмотра на гинекологическом кресле
+                            input(type="radio" name="service")
+    +callbackPopup()
+block scripts
+    script(src="js/data.js")
+    script(src="js/main.js")
+    //script(src="js/appoint.js")

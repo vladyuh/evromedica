@@ -5,8 +5,31 @@
 @import "../blocks/modules/top-bar/top-bar.scss";
 @import "../blocks/modules/favorites/favorites.scss";
 
+@import "vendor/datepicker.scss";
+
 .appoint-page{
-  padding: 16px 0 100px;
+  padding: 16px 0 24px;
+
+  &--success{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .appointment-block{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .container,
+    .appointment-block__success{
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+  }
+
 }
 
 .appointment-block{
@@ -48,10 +71,18 @@
       justify-content: center;
       width: 48px;
       height: 48px;
-      background: #E6F0F5;
+      background-color: #E6F0F5;
       border-radius: 24px;
       margin-right: 16px;
       flex-shrink: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      &[style]{
+        svg{
+          display: none;
+        }
+      }
     }
 
     .caption{
@@ -88,22 +119,28 @@
     font-size: 16px;
     line-height: 150%;
     color: #242629;
-    padding: 12px 36px 12px 16px;
     border-bottom: 1px solid #D8E1E6;
-    position: relative;
 
-    &::after{
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      transform: translateY(-50%);
-      width: 24px;
-      height: 24px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L15 12L9 6' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+
+    label{
+      padding: 12px 52px 12px 16px;
+      display: block;
+      position: relative;
+      &::after{
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 18L15 12L9 6' stroke='%230088CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+      }
     }
+
+
 
     input[type="radio"]{
       position: absolute;
@@ -135,5 +172,196 @@
     }
   }
 
+  &__date{
+    background: #FFFFFF;
+    border-radius: 8px;
+    padding-top: 20px;
+
+    .datepicker-controls .next-btn, .datepicker-controls .prev-btn{
+      padding: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .datepicker-header .datepicker-controls{
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 0 16px;
+    }
+
+    .datepicker-main{
+      padding: 0 5px 16px;
+      font-family: "Open Sans", sans-serif;
+    }
+
+    .datepicker-controls .view-switch{
+      pointer-events: none;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      text-align: center;
+      color: #242629;
+      font-family: "Raleway", sans-serif;
+    }
+
+    .datepicker-view .dow{
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 145%;
+      text-align: center;
+      color: #242629;
+    }
+
+    .datepicker-picker span{
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 145%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 37px !important;
+    }
+
+    .datepicker-cell.selected,
+    .datepicker-cell.selected:hover{
+      background: #0088CC;
+      border-radius: 14px;
+    }
+
+    .datepicker-cell.selected.focused,
+    .datepicker-cell.selected.focused:hover{
+      background: #005F8F;
+    }
+
+  }
+
+  &__choose,
+  &__time{
+    padding: 16px;
+    border-top: 1px solid #D8E1E6;
+  }
+
+  &__time{
+    margin: 0 -4px;
+    display: flex;
+    flex-wrap: wrap;
+    .item{
+      position: relative;
+      background: #0088CC;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 145%;
+      text-align: center;
+      color: #FFFFFF;
+      padding: 6px 12px;
+      margin: 0 4px;
+
+      input{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+      }
+    }
+  }
+
+  &__info{
+    padding-top: 8px;
+    margin-bottom: 24px;
+    .title{
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 145%;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    .block{
+      background: #FFFFFF;
+      border-radius: 8px;
+      padding: 12px 12px 12px 16px;
+      .block-text{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 150%;
+        color: #242629;
+        margin-bottom: 12px;
+      }
+      .block-address{
+        &__caption{
+          font-size: 14px;
+          line-height: 145%;
+          color: #7F8185;
+          margin-bottom: 4px;
+        }
+        &__value{
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 150%;
+          color: #242629;
+          margin-bottom: 4px;
+        }
+        &__link{
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 150%;
+          color: #0088CC;
+        }
+      }
+    }
+  }
+
+  &__submit{
+    padding: 16px;
+    background: #FFFFFF;
+    border-radius: 8px;
+
+    .caption{
+      font-size: 14px;
+      line-height: 145%;
+      color: #7F8185;
+    }
+
+    .price{
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 140%;
+      color: #242629;
+      font-family: Raleway, sans-serif;
+      margin-bottom: 16px;
+    }
+
+  }
+
+  &__success{
+    .name{
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      text-decoration-line: underline;
+      color: #FFFFFF;
+      margin-bottom: 24px;
+    }
+    .caption{
+      margin-bottom: auto;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 150%;
+      text-align: center;
+      color: #FFFFFF;
+    }
+    .btn{
+      margin-top: 24px;
+    }
+  }
+
 }
+
+
 

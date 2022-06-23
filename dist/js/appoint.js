@@ -1,6 +1,6 @@
 window.addEventListener("load", function (){
 
-    var directions = document.querySelector(".appointment-block__directions");
+    /*var directions = document.querySelector(".appointment-block__directions");
     var serv = document.querySelector(".appointment-block__services");
 
     var serviceBlock = document.querySelector('.appointment-block__item--service');
@@ -75,9 +75,18 @@ window.addEventListener("load", function (){
                     em.value + "</div><div class='caption-desc'>Выберите услугу</div>";
             })
         })
-    })
+    })*/
 
-
+    const elem = document.querySelector('.appointment-block__datepicker');
+    const datepicker = new Datepicker(elem, {
+        language: "ru",
+        prevArrow : "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+            "<path d=\"M17 20L11 14L17 8\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+            "</svg>\n",
+        nextArrow: "<svg width=\"28\" height=\"28\" viewBox=\"0 0 28 28\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n" +
+            "<path d=\"M11 20L17 14L11 8\" stroke=\"black\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n" +
+            "</svg>\n",
+    });
 
 
 });

@@ -1,0 +1,68 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/appoint.css")
+block content
+    .appoint-page
+        .top-bar
+            .container
+                a(href="#choose").top-bar__back
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_chevron_left_small_border')
+                .top-bar__title Направление
+                a(href="#choose").top-bar__close
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_x_small_border')
+        .appointment-block
+            .container
+                .appointment-block__directions
+                    .appointment-block__direction
+                        label Гастроэнтерология
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label Гинекология
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label Дерматология
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label Манипуляции общего назначения
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label МРТ 1.5Т без контрастного усиления
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label МРТ 1.5Т c контрастным усилением
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label МРТ 3.0Т без контрастного усиления
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label МРТ 3.0Т с контрастным усилением
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label Неврология
+                            input(type="radio" name="direction")
+                    .appointment-block__direction
+                        label Онкология
+                            input(type="radio" name="direction")
+    +callbackPopup()
+block scripts
+    script(src="js/data.js")
+    script(src="js/main.js")
+    //script(src="js/appoint.js")

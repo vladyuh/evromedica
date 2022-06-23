@@ -1,0 +1,49 @@
+extends ../layouts/default
+include ../helpers/mixins
+include ../../blocks/components/breadcrumbs/breadcrumbs.pug
+include ../../blocks/components/form/form.pug
+include ../../blocks/components/checkbox/checkbox.pug
+include ../../blocks/components/headers/headers.pug
+include ../../blocks/components/table/table.pug
+include ../../blocks/components/popup/popup.pug
+include ../../blocks/modules/user-block/user-block.pug
+include ../../blocks/modules/searchbox/searchbox.pug
+include ../../blocks/modules/services-section/services-section.pug
+include ../../blocks/modules/analyzes/analyzes-mixin.pug
+include ../../blocks/modules/top-bar/top-bar.pug
+
+
+block variables
+    - const title = "Главная"
+block styles
+    link(rel="stylesheet" href="/styles/appoint.css")
+block content
+    .appoint-page
+        .top-bar
+            .container
+                a(href="#choose").top-bar__back
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_chevron_left_small_border')
+                .top-bar__title Дата и время приема
+                a(href="#choose").top-bar__close
+                    svg(width='28' height='28')
+                        use(xlink:href='/img/sprites/sprite.svg#icon_x_small_border')
+        .appointment-block
+            .container
+                .appointment-block__date
+                    .appointment-block__datepicker(data-date="22.06.2022")
+                    .appointment-block__time
+                        label.item 07:45
+                            input(type="radio" name="time" value="07:45")
+                        label.item 18:50
+                            input(type="radio" name="time" value="18:50")
+                        label.item 19:10
+                            input(type="radio" name="time" value="19:10")
+                    .appointment-block__choose
+                        .btn.btn-cyan Выбрать время приема
+    +callbackPopup()
+block scripts
+    //script(src="js/data.js")
+    script(src="js/datepicker.min.js")
+    script(src="js/main.js")
+    script(src="js/appoint.js")
