@@ -37,7 +37,7 @@ if ("loading" in HTMLImageElement.prototype) {
 }
 else {
     const script = document.createElement("script");
-    script.src = "/js/lazysizes.min.js";
+    script.src = "js/lazysizes.min.js";
     document.body.appendChild(script);
 }
 
@@ -68,7 +68,7 @@ window.addEventListener("load", function () {
 
     if(document.querySelector(".splide")){
         var splide = document.createElement("script");
-        splide.src = "/js/splide.min.js";
+        splide.src = "js/splide.min.js";
         splide.onload = initSliders;
         document.body.appendChild(splide);
     }
@@ -76,7 +76,7 @@ window.addEventListener("load", function () {
 
 
     var select = document.createElement("script");
-    select.src = "/js/select.min.js";
+    select.src = "js/select.min.js";
     select.onload = function () {
         const selectCustom = new customSelect({
             selector: "select"
@@ -99,7 +99,7 @@ function initSliders(){
 
 function initMaska(){
     var maska = document.createElement("script");
-    maska.src = "/js/maska.js";
+    maska.src = "js/maska.js";
     maska.onload = function (){
         Maska.create("input[type=\"tel\"]", {
             mask: "+7 (###) ###-##-##"
